@@ -1,0 +1,347 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE187E5D171EEA5F002FCA5C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE187E5C171EEA5F002FCA5C /* Cocoa.framework */; };
+		BE187E5F171EEA5F002FCA5C /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE187E5E171EEA5F002FCA5C /* Python.framework */; };
+		BE187E69171EEA5F002FCA5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE187E67171EEA5F002FCA5C /* InfoPlist.strings */; };
+		BE187E6B171EEA5F002FCA5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE187E6A171EEA5F002FCA5C /* main.m */; };
+		BE187E6F171EEA60002FCA5C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BE187E6D171EEA60002FCA5C /* Credits.rtf */; };
+		BE187E71171EEA60002FCA5C /* main.py in Resources */ = {isa = PBXBuildFile; fileRef = BE187E70171EEA60002FCA5C /* main.py */; };
+		BE187E73171EEA60002FCA5C /* SSCAppDelegate.py in Resources */ = {isa = PBXBuildFile; fileRef = BE187E72171EEA60002FCA5C /* SSCAppDelegate.py */; };
+		BE187E76171EEA60002FCA5C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE187E74171EEA60002FCA5C /* MainMenu.xib */; };
+		BE187E7F171EEB03002FCA5C /* SSCutils.py in Resources */ = {isa = PBXBuildFile; fileRef = BE187E7E171EEB03002FCA5C /* SSCutils.py */; };
+		BE187E85171EEB9F002FCA5C /* SSCController.py in Resources */ = {isa = PBXBuildFile; fileRef = BE187E84171EEB9F002FCA5C /* SSCController.py */; };
+		BE202DC11721AF9000929A80 /* pexpect.py in Resources */ = {isa = PBXBuildFile; fileRef = BE202DC01721AF9000929A80 /* pexpect.py */; };
+		BE45D2D817203E5600033E6A /* SSCssh.py in Resources */ = {isa = PBXBuildFile; fileRef = BE45D2D717203E5600033E6A /* SSCssh.py */; };
+		BE45D2DA17203F1D00033E6A /* SSCprefs.py in Resources */ = {isa = PBXBuildFile; fileRef = BE45D2D917203F1D00033E6A /* SSCprefs.py */; };
+		BE45D2E11720E71C00033E6A /* FoundationPlist.py in Resources */ = {isa = PBXBuildFile; fileRef = BE45D2E01720E71C00033E6A /* FoundationPlist.py */; };
+		BE9878AE17342FDB000AD141 /* SSCServer.py in Resources */ = {isa = PBXBuildFile; fileRef = BE9878AD17342FDB000AD141 /* SSCServer.py */; };
+		BEA2B66C1735FB590069FF78 /* attributes in Resources */ = {isa = PBXBuildFile; fileRef = BEA2B66B1735FB590069FF78 /* attributes */; };
+		BEA2B66F1735FBFE0069FF78 /* default_plugin.xml in Resources */ = {isa = PBXBuildFile; fileRef = BEA2B66E1735FBFE0069FF78 /* default_plugin.xml */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BE187E58171EEA5F002FCA5C /* SparkleShare-Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SparkleShare-Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE187E5C171EEA5F002FCA5C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BE187E5E171EEA5F002FCA5C /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		BE187E61171EEA5F002FCA5C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		BE187E62171EEA5F002FCA5C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BE187E63171EEA5F002FCA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BE187E66171EEA5F002FCA5C /* SparkleShare-Connect-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SparkleShare-Connect-Info.plist"; sourceTree = "<group>"; };
+		BE187E68171EEA5F002FCA5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BE187E6A171EEA5F002FCA5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE187E6C171EEA5F002FCA5C /* SparkleShare-Connect-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SparkleShare-Connect-Prefix.pch"; sourceTree = "<group>"; };
+		BE187E6E171EEA60002FCA5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		BE187E70171EEA60002FCA5C /* main.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = main.py; path = "SparkleShare-Connect/main.py"; sourceTree = SOURCE_ROOT; };
+		BE187E72171EEA60002FCA5C /* SSCAppDelegate.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = SSCAppDelegate.py; sourceTree = "<group>"; };
+		BE187E75171EEA60002FCA5C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BE187E7E171EEB03002FCA5C /* SSCutils.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SSCutils.py; sourceTree = "<group>"; };
+		BE187E84171EEB9F002FCA5C /* SSCController.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SSCController.py; sourceTree = "<group>"; };
+		BE202DC01721AF9000929A80 /* pexpect.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = pexpect.py; sourceTree = "<group>"; };
+		BE45D2D717203E5600033E6A /* SSCssh.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SSCssh.py; sourceTree = "<group>"; };
+		BE45D2D917203F1D00033E6A /* SSCprefs.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SSCprefs.py; sourceTree = "<group>"; };
+		BE45D2E01720E71C00033E6A /* FoundationPlist.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = FoundationPlist.py; sourceTree = "<group>"; };
+		BE9878AD17342FDB000AD141 /* SSCServer.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SSCServer.py; sourceTree = "<group>"; };
+		BEA2B66B1735FB590069FF78 /* attributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = attributes; sourceTree = "<group>"; };
+		BEA2B66E1735FBFE0069FF78 /* default_plugin.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default_plugin.xml; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE187E55171EEA5F002FCA5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE187E5D171EEA5F002FCA5C /* Cocoa.framework in Frameworks */,
+				BE187E5F171EEA5F002FCA5C /* Python.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE187E4D171EEA5F002FCA5C = {
+			isa = PBXGroup;
+			children = (
+				BE187E64171EEA5F002FCA5C /* SparkleShare-Connect */,
+				BE187E5B171EEA5F002FCA5C /* Frameworks */,
+				BE187E59171EEA5F002FCA5C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE187E59171EEA5F002FCA5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE187E58171EEA5F002FCA5C /* SparkleShare-Connect.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE187E5B171EEA5F002FCA5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE187E5C171EEA5F002FCA5C /* Cocoa.framework */,
+				BE187E5E171EEA5F002FCA5C /* Python.framework */,
+				BE187E60171EEA5F002FCA5C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE187E60171EEA5F002FCA5C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE187E61171EEA5F002FCA5C /* AppKit.framework */,
+				BE187E62171EEA5F002FCA5C /* CoreData.framework */,
+				BE187E63171EEA5F002FCA5C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		BE187E64171EEA5F002FCA5C /* SparkleShare-Connect */ = {
+			isa = PBXGroup;
+			children = (
+				BE187E70171EEA60002FCA5C /* main.py */,
+				BE187E74171EEA60002FCA5C /* MainMenu.xib */,
+				BE187E72171EEA60002FCA5C /* SSCAppDelegate.py */,
+				BE187E84171EEB9F002FCA5C /* SSCController.py */,
+				BE9878AD17342FDB000AD141 /* SSCServer.py */,
+				BE45D2D717203E5600033E6A /* SSCssh.py */,
+				BE187E7E171EEB03002FCA5C /* SSCutils.py */,
+				BE45D2D917203F1D00033E6A /* SSCprefs.py */,
+				BE187E65171EEA5F002FCA5C /* Supporting Files */,
+			);
+			path = "SparkleShare-Connect";
+			sourceTree = SOURCE_ROOT;
+		};
+		BE187E65171EEA5F002FCA5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEA2B66E1735FBFE0069FF78 /* default_plugin.xml */,
+				BEA2B66B1735FB590069FF78 /* attributes */,
+				BE202DC01721AF9000929A80 /* pexpect.py */,
+				BE45D2E01720E71C00033E6A /* FoundationPlist.py */,
+				BE187E66171EEA5F002FCA5C /* SparkleShare-Connect-Info.plist */,
+				BE187E67171EEA5F002FCA5C /* InfoPlist.strings */,
+				BE187E6A171EEA5F002FCA5C /* main.m */,
+				BE187E6C171EEA5F002FCA5C /* SparkleShare-Connect-Prefix.pch */,
+				BE187E6D171EEA60002FCA5C /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE187E57171EEA5F002FCA5C /* SparkleShare-Connect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE187E79171EEA60002FCA5C /* Build configuration list for PBXNativeTarget "SparkleShare-Connect" */;
+			buildPhases = (
+				BE187E54171EEA5F002FCA5C /* Sources */,
+				BE187E55171EEA5F002FCA5C /* Frameworks */,
+				BE187E56171EEA5F002FCA5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SparkleShare-Connect";
+			productName = "SparkleShare Connect";
+			productReference = BE187E58171EEA5F002FCA5C /* SparkleShare-Connect.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE187E4F171EEA5F002FCA5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = aapps;
+			};
+			buildConfigurationList = BE187E52171EEA5F002FCA5C /* Build configuration list for PBXProject "SparkleShare-Connect" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BE187E4D171EEA5F002FCA5C;
+			productRefGroup = BE187E59171EEA5F002FCA5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE187E57171EEA5F002FCA5C /* SparkleShare-Connect */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE187E56171EEA5F002FCA5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE187E69171EEA5F002FCA5C /* InfoPlist.strings in Resources */,
+				BE187E6F171EEA60002FCA5C /* Credits.rtf in Resources */,
+				BE187E71171EEA60002FCA5C /* main.py in Resources */,
+				BE187E73171EEA60002FCA5C /* SSCAppDelegate.py in Resources */,
+				BE187E76171EEA60002FCA5C /* MainMenu.xib in Resources */,
+				BE187E7F171EEB03002FCA5C /* SSCutils.py in Resources */,
+				BE187E85171EEB9F002FCA5C /* SSCController.py in Resources */,
+				BE45D2D817203E5600033E6A /* SSCssh.py in Resources */,
+				BE45D2DA17203F1D00033E6A /* SSCprefs.py in Resources */,
+				BE45D2E11720E71C00033E6A /* FoundationPlist.py in Resources */,
+				BE202DC11721AF9000929A80 /* pexpect.py in Resources */,
+				BE9878AE17342FDB000AD141 /* SSCServer.py in Resources */,
+				BEA2B66C1735FB590069FF78 /* attributes in Resources */,
+				BEA2B66F1735FBFE0069FF78 /* default_plugin.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE187E54171EEA5F002FCA5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE187E6B171EEA5F002FCA5C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BE187E67171EEA5F002FCA5C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE187E68171EEA5F002FCA5C /* en */,
+			);
+			name = InfoPlist.strings;
+			path = "SparkleShare-Connect";
+			sourceTree = SOURCE_ROOT;
+		};
+		BE187E6D171EEA60002FCA5C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE187E6E171EEA60002FCA5C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		BE187E74171EEA60002FCA5C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE187E75171EEA60002FCA5C /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE187E77171EEA60002FCA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BE187E78171EEA60002FCA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BE187E7A171EEA60002FCA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SparkleShare-Connect/SparkleShare-Connect-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/SparkleShare-Connect/SparkleShare-Connect-Info.plist";
+				PRODUCT_NAME = "SparkleShare-Connect";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BE187E7B171EEA60002FCA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_TEMP_DIR = "`";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SparkleShare-Connect/SparkleShare-Connect-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/SparkleShare-Connect/SparkleShare-Connect-Info.plist";
+				PRODUCT_NAME = "SparkleShare-Connect";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE187E52171EEA5F002FCA5C /* Build configuration list for PBXProject "SparkleShare-Connect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE187E77171EEA60002FCA5C /* Debug */,
+				BE187E78171EEA60002FCA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE187E79171EEA60002FCA5C /* Build configuration list for PBXNativeTarget "SparkleShare-Connect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE187E7A171EEA60002FCA5C /* Debug */,
+				BE187E7B171EEA60002FCA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE187E4F171EEA5F002FCA5C /* Project object */;
+}

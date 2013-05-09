@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sparkleshare> 
+	<plugin>   
+		<info>
+			<name>projectname</name>
+			<description>servername</description>
+			<icon>own-server.png</icon>
+		</info>
+		<address>
+			<value>ssh://ssuser@servername</value>
+			<example/>
+		</address>
+		<path>
+			<value>sshare_path</value>
+			<example/>
+		</path>
+	</plugin>
+</sparkleshare>
