@@ -16,10 +16,10 @@ import os
 from AppKit import *
 from SSCssh import SSHCommands
 from SSCutils import SanityCheck
+from SSCprefs import getPref
 
 class SSCserver(SSHCommands,SanityCheck):
     pubkey= ''
-    fingerprint = None
     user_home=os.getenv("HOME")
 
     def __init__(self,s):
@@ -30,4 +30,8 @@ class SSCserver(SSHCommands,SanityCheck):
         self.project_path=os.path.join(self.repo,self.project)
         self.user=s.userName.stringValue()
         self.passwd=s.passWord.stringValue()
-
+        try:
+            sscpref =  getPref(self.server)
+            self.fingerprint=sscpref['serverFingerprint']
+        except:
+            self.fingerprint=""

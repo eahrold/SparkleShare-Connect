@@ -303,6 +303,7 @@
 				GCC_PREFIX_HEADER = "SparkleShare-Connect/SparkleShare-Connect-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SparkleShare-Connect/SparkleShare-Connect-Info.plist";
 				PRODUCT_NAME = "SparkleShare-Connect";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -316,6 +317,7 @@
 				GCC_PREFIX_HEADER = "SparkleShare-Connect/SparkleShare-Connect-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SparkleShare-Connect/SparkleShare-Connect-Info.plist";
 				PRODUCT_NAME = "SparkleShare-Connect";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

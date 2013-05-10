@@ -15,7 +15,9 @@ class GitCommands:
         progUp('checking for repo on server')
         cmds=[]
         cmds.append('test -f %s/HEAD' % (self.project_path))
-        return self.runSSH(cmds)
+        if self.runSSH(cmds) == False:
+            return False
+        return True
 
     def gitRepoInit(self):
         progUp('initializing git repo')
@@ -79,8 +81,14 @@ class KeyCommands:
         if i == 0: return 'Server Permission denied'
         if i == 1: return 'Server Timeout'
         if i == 2: # Finger Print Check
-            self.fingerprint=(ssh.before.split()[-1]).split('.')[0]
-            if self.confirmFingerprint():
+            check_fingerprint=(ssh.before.split()[-1]).split('.')[0]
+            if check_fingerprint == self.fingerprint :
+                print "the fingerprints match"
+                fp_test = True
+            else:
+                fp_test = self.confirmFingerprint()
+            if fp_test:
+                self.fingerprint = check_fingerprint
                 ssh.sendline('yes')
                 i=ssh.expect([expect_password,expect_prompt])
                 if i == 0:

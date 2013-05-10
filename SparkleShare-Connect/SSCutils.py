@@ -98,6 +98,7 @@ def tryToSetIBOutlet(outlet,dictionary,value):
         pass
 
 
+
 ##############################################################
 ####  Logging/Status Functions
 ####
@@ -156,7 +157,7 @@ def makePlugin(self):
 
     # wrap it in an ElementTree instance, and save as XML
     ss_xml = xml.ElementTree(ss_root)
-    plugin_file=(os.path.join(self.user_home,".config","sparkleshare","plugins",self.project))
+    plugin_file=(os.path.join(self.user_home,".config","sparkleshare","plugins",self.project+".xml"))
     print plugin_file
     ss_xml.write(plugin_file)
 
@@ -173,18 +174,15 @@ def makeInvite(self):
     remote_path = xml.SubElement(invite, "remote_path")
     remote_path.text = self.project_path
     
-    print(u'here is the pre fingerprint: %s' % self.fingerprint)
     
     if not self.fingerprint :
-        self.fingerprint = self.runSSH(["ssh-keygen -lf /etc/ssh_host_rsa_key.pub | cut -b 6-52"])
-        print(u'here is the fingerprint: %s' % self.fingerprint)
+        self.fingerprint = self.runSSH(["ssh-keygen -lf /etc/ssh_host_rsa_key.pub | cut -b 6-52"]).strip()
     
     fingerprint = xml.SubElement(invite, "fingerprint")
     fingerprint.text = self.fingerprint
     
     ss_xml = xml.ElementTree(ss_root)
     invite_file=(os.path.join(self.user_home,"SparkleShare","repo.xml"))
-    print invite_file
     ss_xml.write(invite_file)
 
 

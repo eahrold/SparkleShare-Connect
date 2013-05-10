@@ -21,6 +21,8 @@ import SSCprefs
 import time
 
 DEBUG = SSCprefs.getPref('debug')
+global tmp_server
+tmp_server = ""
 
 class SSCController(NSObject):
     window = objc.IBOutlet()
@@ -47,7 +49,6 @@ class SSCController(NSObject):
 
 
     def awakeFromNib(self):
-        prog2 = "hello"
         self.ssprogbar.setUsesThreadedAnimation_(True)
 
         if not SSCprefs.getPref('managedServer'):
@@ -62,7 +63,9 @@ class SSCController(NSObject):
         else:
             ssprefs = SSCprefs.getPref('managedServer')
             NSApp.delegate().useMCX.setState_(True)
-       
+            self.serverName.setStringValue_(ssprefs['serverName'])
+
+        
         tryToSetIBOutlet(self.serverPort.setStringValue_,ssprefs,'serverPort')
         tryToSetIBOutlet(self.serverRepo.setStringValue_,ssprefs,'serverRepo')
         tryToSetIBOutlet(self.userName.setStringValue_,ssprefs,'userName')
@@ -89,6 +92,8 @@ class SSCController(NSObject):
     
             makePlugin(server)
             makeInvite(server)
+        
+            SSCprefs.setServerPrefs(server)
             
         
         except Exception, msg:
@@ -103,19 +108,24 @@ class SSCController(NSObject):
 
 
     @objc.IBAction
-    def editServername_(self,sender):
+    def editServerName_(self,sender):
+        global tmp_server
         servername = self.serverName.stringValue()
-        if not self.mcxserver == servername:
-            NSApp.delegate().useMCX.setState_(False)
-        try:
-            ssprefs = SSCprefs.getPref(servername)
-            if not _ssprefs == None:            
-                tryToSetIBOutlet(self.serverPort.setStringValue_,ssprefs,'serverPort')
-                tryToSetIBOutlet(self.serverRepo.setStringValue_,ssprefs,'serverRepo')
-                tryToSetIBOutlet(self.userName.setStringValue_,ssprefs,'userName')
-        except:
-            print "no pref for that server"
 
+        if not tmp_server == servername:
+            if not self.mcxserver == servername:
+                NSApp.delegate().useMCX.setState_(False)
+            try:
+                ssprefs = SSCprefs.getPref(servername)
+                if not ssprefs == None:            
+                    tryToSetIBOutlet(self.serverPort.setStringValue_,ssprefs,'serverPort')
+                    tryToSetIBOutlet(self.serverRepo.setStringValue_,ssprefs,'serverRepo')
+                    tryToSetIBOutlet(self.userName.setStringValue_,ssprefs,'userName')
+            except:
+                pass
+       
+        tmp_server = servername
+        
     @objc.IBAction
     def checkUseMCX_(self,sender):
         if sender.state():

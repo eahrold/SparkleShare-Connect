@@ -54,5 +54,5 @@ def setPref(pref_name, pref_value):
 
 def setServerPrefs(self):
     setPref('LastServerUsed',self.server)
-    setPref(self.server, {'userName':self.user,'serverRepo':self.repo,'serverPort':self.port,})
+    setPref(self.server, {'userName':self.user,'serverRepo':self.repo,'serverPort':self.port,'serverFingerprint':self.fingerprint})
     CFPreferencesSynchronize(BUNDLE_ID,kCFPreferencesCurrentUser, kCFPreferencesAnyHost)
