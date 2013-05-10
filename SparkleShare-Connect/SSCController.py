@@ -86,7 +86,10 @@ class SSCController(NSObject):
                 server.gitSetRepoPerm()
             else:
                 bailOut("That Repo Exists")
-        
+    
+            makePlugin(server)
+            makeInvite(server)
+            
         
         except Exception, msg:
             if DEBUG == True:
@@ -102,10 +105,10 @@ class SSCController(NSObject):
     @objc.IBAction
     def editServername_(self,sender):
         servername = self.serverName.stringValue()
-        if not self.mcxserver == _servername:
+        if not self.mcxserver == servername:
             NSApp.delegate().useMCX.setState_(False)
         try:
-            ssprefs = SSCprefs.getPref(_servername)
+            ssprefs = SSCprefs.getPref(servername)
             if not _ssprefs == None:            
                 tryToSetIBOutlet(self.serverPort.setStringValue_,ssprefs,'serverPort')
                 tryToSetIBOutlet(self.serverRepo.setStringValue_,ssprefs,'serverRepo')

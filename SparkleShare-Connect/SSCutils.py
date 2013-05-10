@@ -14,6 +14,9 @@ from AppKit import *
 import glob
 from Foundation import *
 from time import sleep
+import xml.etree.ElementTree as xml
+
+
 
 RESOURCE_DIRECTORY = NSBundle.mainBundle().resourcePath()
 
@@ -122,12 +125,66 @@ def ssRelaunch():
 def openInvite():
     pass
 
-def makePlugin():
+def makePlugin(self):
     logThis("adding that repo to sshare")
+    ss_root = xml.Element("sparkleshare")
+    plugin = xml.SubElement(ss_root, "plugin")
+    info = xml.SubElement(plugin, "info")
 
-def makeInvite(userRepo):
+    name = xml.SubElement(info, "name")
+    name.text = self.project
+    ##
+    description = xml.SubElement(info,"description")
+    description.text = self.server
+    ##
+    icon = xml.SubElement(info,"icon")
+    icon.text = "own-server.png"
+
+
+    address = xml.SubElement(plugin, "address")
+
+    a_value = xml.SubElement(address, "value")
+    a_value.text = (u'ssh://%s@%s' % (self.user,self.server))
+    xml.SubElement(address, "example")
+
+
+    path = xml.SubElement(plugin, "path")
+
+    p_value = xml.SubElement(path, "value")
+    p_value.text = self.project_path
+    xml.SubElement(path, "example")
+
+    # wrap it in an ElementTree instance, and save as XML
+    ss_xml = xml.ElementTree(ss_root)
+    plugin_file=(os.path.join(self.user_home,".config","sparkleshare","plugins",self.project))
+    print plugin_file
+    ss_xml.write(plugin_file)
+
+
+def makeInvite(self):
     logThis("mading an invite link to the project")
+    ss_root = xml.Element("sparkleshare")
 
+    invite = xml.SubElement(ss_root, "invite")
 
+    address = xml.SubElement(invite, "address")
+    address.text = (u'ssh://%s@%s:%s' % (self.user,self.server,self.port))
+    
+    remote_path = xml.SubElement(invite, "remote_path")
+    remote_path.text = self.project_path
+    
+    print(u'here is the pre fingerprint: %s' % self.fingerprint)
+    
+    if not self.fingerprint :
+        self.fingerprint = self.runSSH(["ssh-keygen -lf /etc/ssh_host_rsa_key.pub | cut -b 6-52"])
+        print(u'here is the fingerprint: %s' % self.fingerprint)
+    
+    fingerprint = xml.SubElement(invite, "fingerprint")
+    fingerprint.text = self.fingerprint
+    
+    ss_xml = xml.ElementTree(ss_root)
+    invite_file=(os.path.join(self.user_home,"SparkleShare","repo.xml"))
+    print invite_file
+    ss_xml.write(invite_file)
 
 

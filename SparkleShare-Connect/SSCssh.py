@@ -13,29 +13,29 @@ class GitCommands:
     
     def gitRepoCheck(self):
         progUp('checking for repo on server')
-        self.cmds=[]
-        self.cmds.append('test -f %s/HEAD' % (self.project_path))
-        return self.runSSH()
+        cmds=[]
+        cmds.append('test -f %s/HEAD' % (self.project_path))
+        return self.runSSH(cmds)
 
     def gitRepoInit(self):
         progUp('initializing git repo')
-        self.cmds=[]
-        self.cmds.append('git init --quiet --bare %s' % (self.project_path))
-        self.cmds.append('git config --file %s/config receive.denyNonFastForwards true' %(self.project_path))
-        return self.runSSH()
+        cmds=[]
+        cmds.append('git init --quiet --bare %s' % (self.project_path))
+        cmds.append('git config --file %s/config receive.denyNonFastForwards true' %(self.project_path))
+        return self.runSSH(cmds)
     
     def gitSetRepoPerm(self):
         progUp('setting repo permissions')
-        self.cmds=[]
+        cmds=[]
         if NSApp.delegate().sharedRepo.state():
-            self.cmds.append('git config --file %s/config core.sharedRepository true'% (self.project_path))
-            self.cmds.append('chmod -R o-rwx %s'% (self.project_path))
-            self.cmds.append('chmod -R g+rwx %s'% (self.project_path))
+            cmds.append('git config --file %s/config core.sharedRepository true'% (self.project_path))
+            cmds.append('chmod -R o-rwx %s'% (self.project_path))
+            cmds.append('chmod -R g+rwx %s'% (self.project_path))
         else:
-            self.cmds.append('git config --file %s/config core.sharedRepository true'% (self.project_path))
-            self.cmds.append('chmod -R o-rwx %s'% (self.project_path))
-            self.cmds.append('chmod -R g+rwx %s'% (self.project_path))
-        return self.runSSH()
+            cmds.append('git config --file %s/config core.sharedRepository true'% (self.project_path))
+            cmds.append('chmod -R o-rwx %s'% (self.project_path))
+            cmds.append('chmod -R g+rwx %s'% (self.project_path))
+        return self.runSSH(cmds)
 
     def gitSetRepoAttributes(self):
         progUp('sending repo attribute file')
@@ -122,17 +122,17 @@ class KeyCommands:
 class SSHCommands(GitCommands,KeyCommands):
     """this is how ssh is implemented, currently subprocess makes the most sense"""
     def __init__(self):
-        self.cmds=[]
+        cmds=[]
         self.fingerprint = None
     
-    def runSSH(self):
-        for cmd in self.cmds:
+    def runSSH(self,cmds):
+        for cmd in cmds:
             print(u'doing %s'%cmd)
             sshcmd=['ssh','-l',self.user,'-p',self.port,self.server,cmd]
             p=subprocess.Popen(sshcmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-            p.communicate()[0]
+            result=p.communicate()[0]
             if p.returncode == 0:
-               pass
+               return result
             else:
                 return False
         return True
@@ -141,9 +141,9 @@ class SSHCommands(GitCommands,KeyCommands):
         #_sshcmd='scp -P %s -q "%s" %s@%s:"%s/"' % (self.port,file,self.user,self.server,remloc)
         sshcmd=['scp','-P', self.port,file,(u'%s@%s:%s' % (self.user,self.server,remloc))]
         p=subprocess.Popen(sshcmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-        p.communicate()[0]
+        result=p.communicate()[0]
         if p.returncode == 0:
-            return True
+            return result
         else:
             return False
 
