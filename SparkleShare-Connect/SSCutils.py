@@ -15,6 +15,7 @@ import glob
 from Foundation import *
 from time import sleep
 import xml.etree.ElementTree as xml
+import shutil
 
 
 
@@ -121,7 +122,14 @@ def progBar(x):
 ####  SparkleShare Specific Functions
 ####
 def ssRelaunch():
-    pass
+    ss_path=os.path.join("Applications","SparkleShare.app","Contents","MacOS","SparkleShare")
+    ss_process=subprocess.Popen("ps -ax| grep [S]parkleShare.app",
+                       shell=True,stdin=subprocess.PIPE,
+                       stdout=subprocess.PIPE).communicate()[0]
+    if ss_process:
+        subprocess.Popen(["kill",ss_process.split()[0]])
+        time.sleep(3)
+    
 
 def openInvite():
     pass
@@ -185,4 +193,14 @@ def makeInvite(self):
     invite_file=(os.path.join(self.user_home,"SparkleShare","repo.xml"))
     ss_xml.write(invite_file)
 
+    sleep(1)
+    count = 0
+
+    while os.path.isfile(invite_file) and count < 3:
+        print(u"pass %s at adding invite didn't work trying again" % count)
+        tmp_file="/tmp/repo.xml"
+        shutil.move(invite_file,tmp_file)
+        sleep(1)
+        shutil.move(tmp_file,invite_file)
+        count = count + 1
 
