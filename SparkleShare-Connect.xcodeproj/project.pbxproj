@@ -298,12 +298,12 @@
 		BE187E7A171EEA60002FCA5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SparkleShare-Connect/SparkleShare-Connect-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SparkleShare-Connect/SparkleShare-Connect-Info.plist";
 				PRODUCT_NAME = "SparkleShare-Connect";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -311,13 +311,13 @@
 		BE187E7B171EEA60002FCA5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_TEMP_DIR = "`";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SparkleShare-Connect/SparkleShare-Connect-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SparkleShare-Connect/SparkleShare-Connect-Info.plist";
 				PRODUCT_NAME = "SparkleShare-Connect";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
