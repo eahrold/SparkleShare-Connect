@@ -69,7 +69,7 @@ class KeyCommands:
 
     def sshSpawn(self,sshcmd):
         """set up reusable terms for pexpect"""
-        expect_newfingerprint = 'Are you sure you want to continue connectin'
+        expect_newfingerprint = 'Are you sure you want to continue connecting'
         expect_logout= 'logout'
         expect_password= '[Pp]assword:'
         expect_prompt= '[#\$]'
